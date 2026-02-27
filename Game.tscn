@@ -1,11 +1,55 @@
 [gd_scene format=3 uid="uid://ckj2k83m765y0"]
 
-[ext_resource type="PackedScene" path="res://drill_player.tscn" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://cf1yku550h3qp" path="res://drill_player.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://map_manager.gd" id="1_xkndl"]
+[ext_resource type="Texture2D" uid="uid://b4oyctppr1g8r" path="res://ground.png" id="3_sb48q"]
+[ext_resource type="Script" uid="uid://cbpt2rql6xa37" path="res://ui.gd" id="3_u44n3"]
 
 [node name="Game" type="Node2D" unique_id=803279900]
 
-[node name="MapManager" type="Node2D" parent="." unique_id=1397447767]
+[node name="MapManager" type="Node2D" parent="." unique_id=1397447767 node_paths=PackedStringArray("ui")]
 script = ExtResource("1_xkndl")
+ui = NodePath("../Control")
 
-[node name="DrillPlayer" parent="MapManager" unique_id=2080515335 instance=ExtResource("1_wbfu4")]
+[node name="DrillPlayer" parent="MapManager" unique_id=2080515335 node_paths=PackedStringArray("ui") instance=ExtResource("1_wbfu4")]
+ui = NodePath("../../Control")
+
+[node name="Background" type="Sprite2D" parent="MapManager" unique_id=1675492179]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-21, 180)
+texture = ExtResource("3_sb48q")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1200, 500)
+
+[node name="StartPoint" type="Node2D" parent="MapManager" unique_id=259385086]
+position = Vector2(567, 144)
+
+[node name="Control" type="Control" parent="." unique_id=1506751124]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_u44n3")
+
+[node name="LabelOre" type="Label" parent="Control" unique_id=1720866355]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Collected ore: 0"
+
+[node name="LabelFuel" type="Label" parent="Control" unique_id=1245655050]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1050.0
+offset_right = 1152.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Fuel: 100 / 100"
