@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://pj8qoltao68n"]
+
+[ext_resource type="Texture2D" uid="uid://df0mxiroow0ar" path="res://icon.svg" id="1_4wuf8"]
+[ext_resource type="PackedScene" uid="uid://cvcur1d1xmfcg" path="res://drill_player.tscn" id="2_s02eq"]
+
+[node name="TestMap" type="Node2D" unique_id=566151500]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1757788266]
+position = Vector2(561, 276)
+texture = ExtResource("1_4wuf8")
+
+[node name="DrillPlayer" parent="." unique_id=2080515335 instance=ExtResource("2_s02eq")]
