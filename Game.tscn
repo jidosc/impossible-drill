@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ckj2k83m765y0"]
+
+[ext_resource type="PackedScene" path="res://drill_player.tscn" id="1_wbfu4"]
+[ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://map_manager.gd" id="1_xkndl"]
+
+[node name="Game" type="Node2D" unique_id=803279900]
+
+[node name="MapManager" type="Node2D" parent="." unique_id=1397447767]
+script = ExtResource("1_xkndl")
+
+[node name="DrillPlayer" parent="MapManager" unique_id=2080515335 instance=ExtResource("1_wbfu4")]
