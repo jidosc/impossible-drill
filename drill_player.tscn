@@ -12,6 +12,12 @@ script = ExtResource("1_1gavp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=842603699]
 shape = SubResource("ConvexPolygonShape2D_1gavp")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1831840766]
+[node name="DrillSprite" type="Sprite2D" parent="." unique_id=1831840766]
 rotation = 3.1415927
 texture = ExtResource("1_fmjyi")
+
+[node name="Timer" type="Timer" parent="." unique_id=292897255]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
