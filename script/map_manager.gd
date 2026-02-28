@@ -62,7 +62,7 @@ func get_player_chunk(player_y):
 	
 func update_chunks(player_y):
 	var player_chunk = get_player_chunk(player_y)
-	for i in range(player_chunk - LOAD_DISTANCE,player_chunk + LOAD_DISTANCE):
+	for i in range(max(1,player_chunk - LOAD_DISTANCE),player_chunk + LOAD_DISTANCE):
 		if not chunks.has(i):
 			spawn_chunk(i)
 	cleanup_chunks(player_chunk)

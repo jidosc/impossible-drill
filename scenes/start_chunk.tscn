@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d4bw7dmaytt83"]
+
+[ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="1_lrcs4"]
+[ext_resource type="Texture2D" uid="uid://c2uajyuoo1xyv" path="res://assets/grass-removebg-preview.png" id="1_tv5tt"]
+
+[node name="start_chunk" type="Node2D" unique_id=1884689235]
+
+[node name="grass2" type="Node2D" parent="." unique_id=1411490443]
+position = Vector2(240.87505, 139.37494)
+scale = Vector2(0.23547363, 0.31408688)
+
+[node name="grass3" type="Sprite2D" parent="grass2" unique_id=47753895]
+position = Vector2(-938.0033, 0)
+texture = ExtResource("1_tv5tt")
+region_enabled = true
+region_rect = Rect2(0, 0, 250, 200)
+
+[node name="grass2" type="Sprite2D" parent="grass2" unique_id=1386555821]
+position = Vector2(-543.5852, 0)
+texture = ExtResource("1_tv5tt")
+
+[node name="grass3" type="Sprite2D" parent="grass2/grass2" unique_id=1403320553]
+position = Vector2(896.5969, 0)
+texture = ExtResource("1_tv5tt")
+region_enabled = true
+region_rect = Rect2(0, 0, 250, 200)
+
+[node name="grass2" type="Sprite2D" parent="grass2/grass2" unique_id=2118181890]
+position = Vector2(1291.0151, 0)
+texture = ExtResource("1_tv5tt")
+
+[node name="grass" type="Sprite2D" parent="grass2" unique_id=11191880]
+texture = ExtResource("1_tv5tt")
+
+[node name="ground" type="Sprite2D" parent="." unique_id=486978047]
+position = Vector2(240.87505, 403.37494)
+scale = Vector2(0.23547363, 0.31408688)
+texture = ExtResource("1_lrcs4")
+region_enabled = true
+region_rect = Rect2(0, 0, 2050, 1500)
