@@ -56,3 +56,45 @@ offset_right = 1152.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Fuel: 100 / 100"
+
+[node name="GrassParent" type="Node2D" parent="." unique_id=986721612]
+
+[node name="GrassRemovebgPreview" type="Sprite2D" parent="GrassParent" unique_id=1664854084]
+position = Vector2(67, 156)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview2" type="Sprite2D" parent="GrassParent" unique_id=730476839]
+position = Vector2(213.895, 156)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview3" type="Sprite2D" parent="GrassParent" unique_id=619058889]
+position = Vector2(361, 155.99998)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview4" type="Sprite2D" parent="GrassParent" unique_id=660208447]
+position = Vector2(510.00003, 156)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview5" type="Sprite2D" parent="GrassParent" unique_id=126741937]
+position = Vector2(658, 155.99998)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview6" type="Sprite2D" parent="GrassParent" unique_id=576951632]
+position = Vector2(804.00006, 155.99998)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview7" type="Sprite2D" parent="GrassParent" unique_id=1540292325]
+position = Vector2(952.00006, 155.99998)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
+
+[node name="GrassRemovebgPreview8" type="Sprite2D" parent="GrassParent" unique_id=1958574801]
+position = Vector2(1100, 156)
+scale = Vector2(0.28444085, 0.20464136)
+texture = ExtResource("5_t88pq")
