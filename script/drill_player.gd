@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 		rotation = initial_rotation + clamp(angle_diff, -MAX_ROTATION, MAX_ROTATION)
 
 	var speed_noise = randf_range(0.8, 1.2)
-	velocity = Vector2.DOWN.rotated(rotation) * speed * speed_noise
+	velocity = Vector2.DOWN.rotated(rotation) * speed * speed_noise * clamp((current_fuel/max_fuel)*10,0,1) 
 
 	shake_timer -= delta
 	if shake_timer <= 0:
@@ -110,6 +110,7 @@ func start_travel() -> void:
 	rotation_locked = true
 
 func end_travel() -> void:
+	await get_tree().create_timer(2).timeout
 	active = false
 	$DrillSprite.position = Vector2.ZERO
 	if manager != null:
