@@ -5,7 +5,7 @@ var game_manager: MapManager
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var camera = get_viewport().get_camera_2d()
-		camera._camera_shake()
-		print(camera)
+		if camera is PlayerCamera:
+			camera._camera_shake()
 		game_manager.collect_ore(self)
 		

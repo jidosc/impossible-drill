@@ -9,6 +9,7 @@ var max_fuel = 100
 var current_fuel = max_fuel
 var fuel_drain_rate = 10
 
+var shake_reduction = 1.0
 var shake_timer = 0.0
 var random_torque = 0.0
 var torque_change_timer = 0.0
@@ -57,7 +58,7 @@ func _physics_process(delta: float) -> void:
 	torque_change_timer -= delta
 	if torque_change_timer <= 0:
 		torque_change_timer = randf_range(0.1, 0.3)
-		random_torque = randf_range(-0.04, 0.04)
+		random_torque = randf_range(-0.04 / shake_reduction, 0.04 / shake_reduction)
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:

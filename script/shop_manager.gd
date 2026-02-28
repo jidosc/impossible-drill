@@ -44,4 +44,6 @@ func _upgrade_bought(type: String, cost: int):
 			drill.turn_rate += 0.1
 		"SPEED":
 			drill.speed += 10
+		"SHAKE":
+			drill.shake_reduction += 0.1
 			

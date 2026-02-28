@@ -1,4 +1,4 @@
-extends Camera2D
+class_name PlayerCamera extends Camera2D
 
 @export var period = 0.2
 @export var magnitude = 90.0
