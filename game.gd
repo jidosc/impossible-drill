@@ -3,8 +3,6 @@ extends Node2D
 var shop_manager: ShopManager
 var map_manager: MapManager
 
-var collected_ore: int = 0
-
 func _ready() -> void:
 	shop_manager = $ShopManager
 	map_manager = $MapManager

@@ -4,14 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bl2a26uce4ice" path="res://scenes/shop_manager.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://degkjx0y6smm4" path="res://scenes/map_manager.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://2wdrknkl0anc" path="res://scenes/ui.tscn" id="3_iywne"]
-[ext_resource type="Script" path="res://script/shop_manager.gd" id="3_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=2145070877]
 script = ExtResource("1_lbhrr")
 
 [node name="ShopManager" parent="." unique_id=760973937 instance=ExtResource("1_lnu2h")]
+visible = false
 position = Vector2(354, 86)
-script = ExtResource("3_p57ef")
 
 [node name="MapManager" parent="." unique_id=203988405 node_paths=PackedStringArray("ui") instance=ExtResource("2_lbhrr")]
 ui = NodePath("../UI")

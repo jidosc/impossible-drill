@@ -17,7 +17,7 @@
 		
 @export var type: String = "PLACEHODLER"
 
-signal bought(type: String, cost: int)
+signal bought(upgrade_type: String, upgrade_cost: int)
 
 func _on_button_pressed() -> void:
 	bought.emit(type, cost)

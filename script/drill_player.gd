@@ -124,6 +124,6 @@ func _on_timer_timeout() -> void:
 	$DrillSprite.scale.x = -$DrillSprite.scale.x
 	
 #A PROCESS TO CLAMP PLAYER INSIDE OF THE CAMERA VIEWPORT
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var margin = 16
 	position.x = clamp(position.x,margin,screen_size.x - margin)

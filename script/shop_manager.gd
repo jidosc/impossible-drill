@@ -8,14 +8,14 @@ var available_ore: int = 0
 func _ready() -> void:
 	for c in %Upgrades.get_children():
 		var upgrade: Upgrade = c
-		upgrade.bought.connect(_upgrade_bought.bind)
+		upgrade.bought.connect(_upgrade_bought.bind())
 		print("connected")
 
-func open_shop(drill: Player, collected_ore: int):
+func open_shop(_drill: Player, collected_ore: int):
 	available_ore = collected_ore
 	update_ore()
 	
-	self.drill = drill
+	drill = _drill
 	visible = true
 	$CameraShop.enabled = true
 	drill.position = $DrillPoint.position
@@ -42,5 +42,5 @@ func _upgrade_bought(type: String, cost: int):
 		"TURN":
 			drill.turn_rate += 0.1
 		"SPEED":
-			drill.SPEED += 10
+			drill.speed += 10
 			

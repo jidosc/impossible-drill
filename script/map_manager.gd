@@ -12,7 +12,7 @@ var LOAD_DISTANCE := 2
 var player: Player
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player != null:
 		var player_y = player.global_position.y
 		update_chunks(player_y)
