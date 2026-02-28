@@ -7,6 +7,7 @@
 points = PackedVector2Array(0, 76, 119, -33, -115, -33)
 
 [node name="DrillPlayer" type="CharacterBody2D" unique_id=2080515335]
+z_index = 10
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_1gavp")
 

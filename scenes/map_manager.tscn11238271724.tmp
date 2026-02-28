@@ -4,10 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="2_1q1v5"]
 [ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="2_nm55u"]
 [ext_resource type="PackedScene" uid="uid://brm5nmavahsxa" path="res://scenes/chunk.tscn" id="2_or80t"]
+[ext_resource type="Script" uid="uid://ccqslslkxyt6o" path="res://script/camera_2d_clamp_y.gd" id="5_qcnjr"]
 
 [node name="MapManager" type="Node2D" unique_id=203988405]
 script = ExtResource("1_m27ba")
 chunk_scene = ExtResource("2_or80t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=532402495]
+position = Vector2(209.99998, 154.99998)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("5_qcnjr")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=276751498]
 visible = false
@@ -26,8 +32,3 @@ position = Vector2(205, 152)
 light_mask = 3
 visibility_layer = 3
 position = Vector2(209.99998, 154.99998)
-
-[node name="Camera2D" type="Camera2D" parent="DrillPlayer" unique_id=532402495]
-scale = Vector2(0.99999994, 0.99999994)
-limit_left = 0
-limit_right = 480

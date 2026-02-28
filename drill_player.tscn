@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bdx8uvmrqy4uu"]
+[gd_scene format=3 uid="uid://cvcur1d1xmfcg"]
 
 [ext_resource type="Script" uid="uid://bbaphisvl2sqb" path="res://script/drill_player.gd" id="1_1gavp"]
 [ext_resource type="Texture2D" uid="uid://n412adkhtt0r" path="res://assets/DrillFinal.png" id="1_fmjyi"]

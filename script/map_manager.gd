@@ -10,6 +10,14 @@ var chunks = {}
 var chunk_height := 600
 var LOAD_DISTANCE := 2
 
+
+func _process(delta: float) -> void:
+	if $DrillPlayer != null:
+		var player_y = $DrillPlayer.global_position.y
+		update_chunks(player_y)
+		print(get_player_chunk(player_y))
+		
+		
 func _ready() -> void:
 	distribute_ore(100)
 	$DrillPlayer.manager = self
@@ -30,7 +38,7 @@ func distribute_ore(amount: int):
 		return Error.ERR_INVALID_PARAMETER
 	for i in range(amount):
 		var g_rect: Rect2 = $Background.get_rect()
-		print(g_rect)
+		#print(g_rect)
 		var random_pos: Vector2 = Vector2(randi_range($Background.position.x, $Background.position.x + g_rect.size.x), randi_range($Background.position.y, $Background.position.y + g_rect.size.y))
 		add_ore(random_pos)
 
@@ -49,4 +57,20 @@ func collect_ore(ore: Ore):
 func get_player_chunk(player_y):
 	return int(player_y/chunk_height)
 	
+func update_chunks(player_y):
+	var player_chunk = get_player_chunk(player_y)
+	for i in range(player_chunk - LOAD_DISTANCE,player_chunk + LOAD_DISTANCE):
+		if not chunks.has(i):
+			spawn_chunk(i)
+	cleanup_chunks(player_chunk)
 	
+func spawn_chunk(index):
+	var chunk = chunk_scene.instantiate()
+	add_child(chunk)
+	chunk.setup(index)
+	chunks[index] = chunk
+	
+func cleanup_chunks(player_chunk):
+	for index in chunks.keys():
+		if abs(index - player_chunk) > LOAD_DISTANCE + 1:
+			chunks.erase(index)

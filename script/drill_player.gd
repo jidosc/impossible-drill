@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 const MAX_SPEED = 150
 var turn_rate = 0.08
 var active = true
-const MAX_FUEL = 100
+const MAX_FUEL = 1000
 var current_fuel = MAX_FUEL
 var fuel_drain_rate = 10
 
@@ -37,7 +37,7 @@ func _create_trail() -> void:
 	trail.joint_mode = Line2D.LINE_JOINT_ROUND
 	trail.begin_cap_mode = Line2D.LINE_CAP_ROUND
 	trail.end_cap_mode = Line2D.LINE_CAP_ROUND
-	
+	trail.z_index = 10
 	# Give it a rough, dirt-like gradient so edges look like displaced earth
 	var grad = Gradient.new()
 	grad.set_color(0, Color(0.18, 0.10, 0.03, 1.0))   # dark core
@@ -49,6 +49,7 @@ func _create_trail() -> void:
 	trail.z_index = -1  # render behind everything
 
 func _physics_process(delta: float) -> void:
+	manager.update_chunks(global_position.y)
 	if not active:
 		return
 
@@ -126,4 +127,5 @@ func _on_timer_timeout() -> void:
 	
 #A PROCESS TO CLAMP PLAYER INSIDE OF THE CAMERA VIEWPORT
 func _process(delta: float) -> void:
-	position = position.clamp(Vector2.ZERO, screen_size)
+	var margin = 16
+	position.x = clamp(position.x,margin,screen_size.x - margin)

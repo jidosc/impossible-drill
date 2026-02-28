@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2uajyuoo1xyv"
-path="res://.godot/imported/grass-removebg-preview.png-8b315f6d98dd298c6e64771932d69e85.ctex"
+uid="uid://w756jmvd782w"
+path="res://.godot/imported/muddy_ground.jpg-3d0fdc519e66f650ff315cad15f28562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass-removebg-preview.png"
-dest_files=["res://.godot/imported/grass-removebg-preview.png-8b315f6d98dd298c6e64771932d69e85.ctex"]
+source_file="res://assets/muddy_ground.jpg"
+dest_files=["res://.godot/imported/muddy_ground.jpg-3d0fdc519e66f650ff315cad15f28562.ctex"]
 
 [params]
 
