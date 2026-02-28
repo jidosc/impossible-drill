@@ -1,11 +1,22 @@
 [gd_scene format=3 uid="uid://brm5nmavahsxa"]
 
-[ext_resource type="PackedScene" uid="uid://b86oi0qib73s7" path="res://scenes/ore.tscn" id="1_jas4a"]
-[ext_resource type="Script" uid="uid://b6r4dby6hgqbu" path="res://scenes/chunk.gd" id="1_jtw3q"]
+[ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="1_jtw3q"]
+
+[sub_resource type="GDScript" id="GDScript_jas4a"]
+script/source = "extends Node2D
+
+var chunk_index: int
+var chunk_height := 600
+
+func setup(index:int):
+	chunk_index = index
+	position.y = index * chunk_height
+"
 
 [node name="Chunk" type="Node2D" unique_id=217917006]
-script = ExtResource("1_jtw3q")
+script = SubResource("GDScript_jas4a")
 
 [node name="ground" type="Sprite2D" parent="." unique_id=267479805]
-
-[node name="Ore" parent="." unique_id=989235731 instance=ExtResource("1_jas4a")]
+position = Vector2(240.87505, 321.375)
+scale = Vector2(0.23547363, 0.31408688)
+texture = ExtResource("1_jtw3q")
