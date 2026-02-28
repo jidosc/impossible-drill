@@ -5,7 +5,7 @@ var manager: MapManager
 var speed = 100.0
 var turn_rate = 0.08
 var active = true
-var max_fuel = 100
+var max_fuel = 1000
 var current_fuel = max_fuel
 var fuel_drain_rate = 10
 

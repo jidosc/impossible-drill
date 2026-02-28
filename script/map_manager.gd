@@ -20,11 +20,12 @@ func _process(_delta: float) -> void:
 		
 		
 func _ready() -> void:
-	distribute_ore(100)
 	player = $DrillPlayer
 	player.manager = self
 	if ui != null:
 		player.ui = ui
+	var start_chunk = $start_chunk
+	chunks[0] = start_chunk
 	
 func spawn_drill(drill: Player, available_ore: int):
 	collected_ore = available_ore
@@ -36,13 +37,17 @@ func reset_drill(drill: Player):
 	remove_child(drill)
 	returned_to_surface.emit(drill, collected_ore)
 
-func distribute_ore(amount: int):
+func distribute_ore(amount: int, rect : Rect2):
 	if not amount is int:
 		return Error.ERR_INVALID_PARAMETER
+	if rect == null:
+		rect = $Background.get_rect()
 	for i in range(amount):
-		var g_rect: Rect2 = $Background.get_rect()
 		#print(g_rect)
-		var random_pos: Vector2 = Vector2(randi_range($Background.position.x, $Background.position.x + g_rect.size.x), randi_range($Background.position.y, $Background.position.y + g_rect.size.y))
+		var random_pos :Vector2 = Vector2(
+			randi_range(rect.position.x, rect.position.x + rect.size.x),
+			randi_range(rect.position.y, rect.position.y + rect.size.y)
+		)
 		add_ore(random_pos)
 
 func add_ore(at_pos: Vector2):
@@ -72,6 +77,8 @@ func spawn_chunk(index):
 	add_child(chunk)
 	chunk.setup(index)
 	chunks[index] = chunk
+	var chunk_rect = Rect2(chunk.position,Vector2(400,chunk_height))
+	distribute_ore(50,chunk_rect)
 	
 func cleanup_chunks(player_chunk):
 	for index in chunks.keys():
