@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody2D
 @export var ui: UI
+@onready var screen_size = get_viewport_rect().size
 var manager: MapManager
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -117,3 +118,7 @@ func end_travel() -> void:
 
 func _on_timer_timeout() -> void:
 	$DrillSprite.scale.x = -$DrillSprite.scale.x
+	
+#A PROCESS TO CLAMP PLAYER INSIDE OF THE CAMERA VIEWPORT
+func _process(delta: float) -> void:
+	position = position.clamp(Vector2.ZERO, screen_size)

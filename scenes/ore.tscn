@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b86oi0qib73s7"]
 
-[ext_resource type="Script" uid="uid://bxxmpifq0nmfw" path="res://ore.gd" id="1_r2ayp"]
-[ext_resource type="Texture2D" uid="uid://buicwkmd1b6vp" path="res://ore.png" id="2_r2ayp"]
+[ext_resource type="Script" uid="uid://bxxmpifq0nmfw" path="res://script/ore.gd" id="1_r2ayp"]
+[ext_resource type="Texture2D" uid="uid://buicwkmd1b6vp" path="res://assets/ore.png" id="2_r2ayp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2ayp"]
 radius = 7.071068

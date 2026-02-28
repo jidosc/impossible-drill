@@ -1,24 +1,26 @@
-[gd_scene format=3 uid="uid://ckj2k83m765y0"]
+[gd_scene format=3 uid="uid://c388td3t2t2qr"]
 
-[ext_resource type="PackedScene" uid="uid://cf1yku550h3qp" path="res://drill_player.tscn" id="1_wbfu4"]
-[ext_resource type="Script" path="res://map_manager.gd" id="1_xkndl"]
-[ext_resource type="Texture2D" uid="uid://b4oyctppr1g8r" path="res://ground.png" id="3_sb48q"]
-[ext_resource type="Script" path="res://ui.gd" id="3_u44n3"]
+[ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="1_wbfu4"]
+[ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://script/map_manager.gd" id="1_xkndl"]
+[ext_resource type="PackedScene" uid="uid://brm5nmavahsxa" path="res://scenes/chunk.tscn" id="2_s0nni"]
+[ext_resource type="Texture2D" uid="uid://b4oyctppr1g8r" path="res://assets/ground.png" id="3_sb48q"]
+[ext_resource type="Script" uid="uid://cbpt2rql6xa37" path="res://script/ui.gd" id="3_u44n3"]
 
 [node name="Game" type="Node2D" unique_id=803279900]
 
 [node name="MapManager" type="Node2D" parent="." unique_id=1397447767 node_paths=PackedStringArray("ui")]
 script = ExtResource("1_xkndl")
 ui = NodePath("../Control")
+chunk_scene = ExtResource("2_s0nni")
 
 [node name="DrillPlayer" parent="MapManager" unique_id=2080515335 node_paths=PackedStringArray("ui") instance=ExtResource("1_wbfu4")]
-position = Vector2(566, 189)
 ui = NodePath("../../Control")
 
 [node name="Background" type="Sprite2D" parent="MapManager" unique_id=1675492179]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-21, 180)
+position = Vector2(4, 180)
+scale = Vector2(0.39833334, 1)
 texture = ExtResource("3_sb48q")
 centered = false
 region_enabled = true

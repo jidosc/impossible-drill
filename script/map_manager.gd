@@ -1,8 +1,12 @@
 class_name MapManager extends Node2D
 
 @export var ui: UI
-var packed_ore: PackedScene = preload("res://ore.tscn")
+var packed_ore: PackedScene = preload("res://scenes/ore.tscn")
 var collected_ore: int = 0
+@export var chunk_scene : PackedScene
+var chunks = {}
+var chunk_height := 600
+var LOAD_DISTANCE := 2
 
 func _ready() -> void:
 	distribute_ore(100)
@@ -30,3 +34,8 @@ func collect_ore(ore: Ore):
 	ore.call_deferred("queue_free")
 	collected_ore += 1
 	ui.update_ore(collected_ore)
+	
+func get_player_chunk(player_y):
+	return int(player_y/chunk_height)
+	
+	
