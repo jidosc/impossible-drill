@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="2_1q1v5"]
 [ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="2_nm55u"]
 [ext_resource type="PackedScene" uid="uid://brm5nmavahsxa" path="res://scenes/chunk.tscn" id="2_or80t"]
-[ext_resource type="PackedScene" uid="uid://d4bw7dmaytt83" path="res://scenes/start_chunk.tscn" id="5_qcnjr"]
+[ext_resource type="PackedScene" path="res://scenes/start_chunk.tscn" id="5_qcnjr"]
 
 [node name="MapManager" type="Node2D" unique_id=203988405]
 script = ExtResource("1_m27ba")
@@ -30,6 +30,7 @@ position = Vector2(209.99998, 154.99998)
 
 [node name="Camera2D" type="Camera2D" parent="DrillPlayer" unique_id=532402495]
 scale = Vector2(0.99999994, 0.99999994)
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
 limit_right = 480

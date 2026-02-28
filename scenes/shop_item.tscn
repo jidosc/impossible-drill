@@ -3,22 +3,21 @@
 [ext_resource type="Script" uid="uid://bmh0qdvmo43po" path="res://script/shop_item.gd" id="1_btjjm"]
 [ext_resource type="Theme" uid="uid://by02dbi6gqnt2" path="res://scenes/shop_theme.tres" id="1_lrx6i"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8d0om"]
-font_size = 8
-
 [node name="ShopItem" type="Panel" unique_id=877585486 node_paths=PackedStringArray("description_label", "cost_label")]
 clip_contents = true
 custom_minimum_size = Vector2(0, 16)
-offset_right = 318.0
-offset_bottom = 73.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_bottom = 16.0
+grow_horizontal = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 3
 script = ExtResource("1_btjjm")
 description_label = NodePath("MarginContainer/HBoxContainer/LabelDescription")
 cost_label = NodePath("MarginContainer/HBoxContainer/LabelCost")
 description = "Hej där jag hter Oscar och gjorde detta vackra spel"
 cost = 10
-type = null
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2013419844]
 layout_mode = 1
@@ -27,16 +26,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2074050279]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lrx6i")
-theme_override_constants/separation = 4
+theme_override_constants/separation = 16
 
 [node name="LabelDescription" type="Label" parent="MarginContainer/HBoxContainer" unique_id=478223559]
 unique_name_in_owner = true
@@ -44,7 +43,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lrx6i")
 text = "Hej där jag hter Oscar och gjorde detta vackra spel"
-label_settings = SubResource("LabelSettings_8d0om")
 
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer" unique_id=480777308]
 layout_mode = 2
@@ -57,7 +55,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lrx6i")
 text = "Cost: 11"
-label_settings = SubResource("LabelSettings_8d0om")
 horizontal_alignment = 2
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

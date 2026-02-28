@@ -19,6 +19,7 @@ func open_shop(_drill: Player, collected_ore: int):
 	visible = true
 	$CameraShop.enabled = true
 	drill.position = $DrillPoint.position
+	drill.rotation = 0
 	add_child(drill)
 
 func update_ore():

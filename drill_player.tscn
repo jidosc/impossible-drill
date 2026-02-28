@@ -1,14 +1,12 @@
-[gd_scene format=3 uid="uid://blcy7rpis7b3"]
+[gd_scene format=3 uid="uid://bdx8uvmrqy4uu"]
 
 [ext_resource type="Script" uid="uid://bbaphisvl2sqb" path="res://script/drill_player.gd" id="1_1gavp"]
 [ext_resource type="Texture2D" uid="uid://n412adkhtt0r" path="res://assets/DrillFinal.png" id="1_fmjyi"]
-[ext_resource type="Texture2D" uid="uid://cqd24iegyamvi" path="res://image-removebg-preview(4).png" id="3_4s2dt"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_1gavp"]
 points = PackedVector2Array(0, 76, 119, -33, -115, -33)
 
-[node name="DrillPlayer2" type="CharacterBody2D" unique_id=2080515335]
-z_index = 10
+[node name="DrillPlayer" type="CharacterBody2D" unique_id=2080515335]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_1gavp")
 
@@ -24,11 +22,6 @@ wait_time = 0.1
 autostart = true
 
 [node name="changeDirTimer" type="Timer" parent="." unique_id=699373462]
-
-[node name="FredrikBorrman" type="Sprite2D" parent="." unique_id=1456706157]
-position = Vector2(10, -124.99999)
-scale = Vector2(0.7784552, 0.6549296)
-texture = ExtResource("3_4s2dt")
 
 [connection signal="timeout" from="SpinTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="changeDirTimer" to="." method="_on_change_dir_timer_timeout"]

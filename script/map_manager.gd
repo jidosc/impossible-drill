@@ -16,7 +16,6 @@ func _process(_delta: float) -> void:
 	if player != null:
 		var player_y = player.global_position.y
 		update_chunks(player_y)
-		print(get_player_chunk(player_y))
 		
 		
 func _ready() -> void:

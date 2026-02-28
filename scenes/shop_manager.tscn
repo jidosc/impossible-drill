@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccylebkwml8t0" path="res://scenes/shop_item.tscn" id="3_8d0om"]
 [ext_resource type="Texture2D" uid="uid://dij2l3ysi3h78" path="res://assets/shop-keeper.png" id="4_gx78v"]
 [ext_resource type="Texture2D" uid="uid://di8enkt1qyei" path="res://assets/wildwest.png" id="4_mv7ed"]
+[ext_resource type="Texture2D" uid="uid://u6t5taxxv5f4" path="res://assets/textbox.png" id="6_rhy2b"]
 
 [node name="ShopManager" type="Node2D" unique_id=760973937]
 script = ExtResource("1_8d0om")
@@ -14,35 +15,93 @@ enabled = false
 zoom = Vector2(2, 2)
 
 [node name="DrillPoint" type="Node2D" parent="." unique_id=1858706309]
-position = Vector2(-1, -1)
+position = Vector2(76, 307)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2014987323]
-offset_left = -245.0
-offset_top = -167.0
-offset_right = 528.297
-offset_bottom = 163.0
+offset_left = -750.0
+offset_top = -485.0
+offset_right = 1781.3379
+offset_bottom = 482.0
 size_flags_vertical = 3
 texture = ExtResource("4_mv7ed")
 expand_mode = 3
 stretch_mode = 4
 flip_h = true
 
+[node name="Control" type="Control" parent="." unique_id=1863846454]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -98.0
+offset_top = 97.0
+offset_right = -58.0
+offset_bottom = 137.0
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1880878217]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.875
+anchor_top = 0.5
+anchor_right = 3.0
+anchor_bottom = 9.075
+offset_left = -15.0
+offset_top = -120.11293
+offset_right = 210.0
+offset_bottom = -57.112915
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_gx78v")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="Control" unique_id=449778898]
+layout_mode = 0
+offset_left = 375.99997
+offset_top = -57.112923
+offset_right = 883.66235
+offset_bottom = 243.24667
+rotation = 2.819221
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_rhy2b")
+expand_mode = 1
+stretch_mode = 4
+flip_v = true
+
+[node name="Label" type="Label" parent="Control" unique_id=505631921]
+layout_mode = 0
+offset_left = 37.0
+offset_top = -200.0
+offset_right = 310.0
+offset_bottom = -57.1532
+rotation = -0.3464325
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_52e1r")
+theme_override_font_sizes/font_size = 20
+text = "CEO of Borrman Industries:
+Good job mining all that ore, 
+Pal! Buy some upgrades for
+yourself, and then keep 
+mining. Neverstopthegrind!"
+vertical_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1066310551]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -121.0
-offset_top = -160.0
-offset_right = 120.0
-offset_bottom = 160.0
+offset_left = -362.0
+offset_top = -482.0
+offset_right = 360.0
+offset_bottom = 477.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=693544631]
 layout_mode = 2
@@ -62,6 +121,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 8
 
 [node name="Speed" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=877585486 instance=ExtResource("3_8d0om")]
 layout_mode = 2
@@ -80,31 +140,11 @@ layout_mode = 2
 description = "More fuel capacity?"
 type = "FUEL"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1661683417]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1279676170]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1880878217]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("4_gx78v")
-expand_mode = 1
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=505631921]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme = ExtResource("2_52e1r")
-theme_override_font_sizes/font_size = 6
-text = "CEO of Borrman Industries:
-good job mining all that ore, pal!
-buy some upgrades for yourself, 
-and then keep mining
-#neverstopthegrind"
-vertical_alignment = 1
+size_flags_stretch_ratio = 3.0
+color = Color(1, 1, 1, 0)
 
 [node name="ButtonVenture" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1483343131]
 layout_mode = 2
