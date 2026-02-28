@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ckj2k83m765y0"]
 
 [ext_resource type="PackedScene" uid="uid://cf1yku550h3qp" path="res://drill_player.tscn" id="1_wbfu4"]
-[ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://map_manager.gd" id="1_xkndl"]
+[ext_resource type="Script" path="res://map_manager.gd" id="1_xkndl"]
 [ext_resource type="Texture2D" uid="uid://b4oyctppr1g8r" path="res://ground.png" id="3_sb48q"]
-[ext_resource type="Script" uid="uid://cbpt2rql6xa37" path="res://ui.gd" id="3_u44n3"]
+[ext_resource type="Script" path="res://ui.gd" id="3_u44n3"]
 
 [node name="Game" type="Node2D" unique_id=803279900]
 
@@ -12,6 +12,7 @@ script = ExtResource("1_xkndl")
 ui = NodePath("../Control")
 
 [node name="DrillPlayer" parent="MapManager" unique_id=2080515335 node_paths=PackedStringArray("ui") instance=ExtResource("1_wbfu4")]
+position = Vector2(566, 189)
 ui = NodePath("../../Control")
 
 [node name="Background" type="Sprite2D" parent="MapManager" unique_id=1675492179]

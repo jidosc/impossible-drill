@@ -17,8 +17,11 @@ shape = SubResource("ConvexPolygonShape2D_1gavp")
 rotation = 3.1415927
 texture = ExtResource("1_fmjyi")
 
-[node name="Timer" type="Timer" parent="." unique_id=292897255]
+[node name="SpinTimer" type="Timer" parent="." unique_id=292897255]
 wait_time = 0.1
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="changeDirTimer" type="Timer" parent="." unique_id=699373462]
+
+[connection signal="timeout" from="SpinTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="changeDirTimer" to="." method="_on_change_dir_timer_timeout"]
