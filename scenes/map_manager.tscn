@@ -35,3 +35,4 @@ limit_top = 0
 limit_right = 480
 
 [node name="start_chunk" parent="." unique_id=1884689235 instance=ExtResource("5_qcnjr")]
+z_index = -1
