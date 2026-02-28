@@ -14,6 +14,7 @@ func setup(index:int):
 "
 
 [node name="Chunk" type="Node2D" unique_id=217917006]
+z_index = -1
 script = SubResource("GDScript_jas4a")
 
 [node name="ground" type="Sprite2D" parent="." unique_id=267479805]

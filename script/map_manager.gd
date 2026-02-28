@@ -9,20 +9,22 @@ var collected_ore: int = 0
 var chunks = {}
 var chunk_height := 600
 var LOAD_DISTANCE := 2
+var player: Player
 
 
 func _process(delta: float) -> void:
-	if $DrillPlayer != null:
-		var player_y = $DrillPlayer.global_position.y
+	if player != null:
+		var player_y = player.global_position.y
 		update_chunks(player_y)
 		print(get_player_chunk(player_y))
 		
 		
 func _ready() -> void:
 	distribute_ore(100)
-	$DrillPlayer.manager = self
+	player = $DrillPlayer
+	player.manager = self
 	if ui != null:
-		$DrillPlayer.ui = ui
+		player.ui = ui
 	
 func spawn_drill(drill: Player, available_ore: int):
 	collected_ore = available_ore
