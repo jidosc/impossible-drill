@@ -4,12 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="2_1q1v5"]
 [ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="2_nm55u"]
 [ext_resource type="PackedScene" uid="uid://brm5nmavahsxa" path="res://scenes/chunk.tscn" id="2_or80t"]
+[ext_resource type="Texture2D" uid="uid://di8enkt1qyei" path="res://assets/wildwest.png" id="3_itoub"]
 [ext_resource type="Script" uid="uid://dd15xhifdgyxq" path="res://scenes/ScreenShake.gd" id="5_qcnjr"]
 [ext_resource type="PackedScene" path="res://scenes/start_chunk.tscn" id="6_ennt4"]
 
 [node name="MapManager" type="Node2D" unique_id=203988405]
 script = ExtResource("1_m27ba")
 chunk_scene = ExtResource("2_or80t")
+
+[node name="BackBackground" type="Sprite2D" parent="." unique_id=1395688330]
+z_index = -2
+position = Vector2(243.46594, 42.000008)
+scale = Vector2(0.8828337, 0.8828338)
+texture = ExtResource("3_itoub")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=276751498]
 visible = false

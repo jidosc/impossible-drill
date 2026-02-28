@@ -30,7 +30,6 @@ func _pressed_venture_button():
 	$CameraShop.enabled = false
 	visible = false
 	drill.scale = Vector2(0.2, 0.2)
-	remove_child(drill)
 	venture_down.emit(drill, available_ore)
 
 func _upgrade_bought(upgrade: Upgrade):

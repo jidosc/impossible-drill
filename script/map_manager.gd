@@ -34,7 +34,6 @@ func spawn_drill(drill: Player, available_ore: int):
 	add_child(drill)
 	
 func reset_drill(drill: Player):
-	remove_child(drill)
 	returned_to_surface.emit(drill, collected_ore)
 
 func distribute_ore(amount: int, rect : Rect2):
