@@ -115,5 +115,9 @@ func end_travel() -> void:
 	if manager != null:
 		manager.reset_drill(self)
 
+func refuel():
+	current_fuel = MAX_FUEL
+	active = true
+
 func _on_timer_timeout() -> void:
 	$DrillSprite.scale.x = -$DrillSprite.scale.x

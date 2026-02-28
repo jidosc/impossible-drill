@@ -1,11 +1,33 @@
 [gd_scene format=3 uid="uid://ckj2k83m765y0"]
 
+[ext_resource type="Script" uid="uid://dusk8rgd1so26" path="res://game.gd" id="1_r0x5m"]
+[ext_resource type="Script" uid="uid://b4s2x2xmjxcc4" path="res://shop_manager.gd" id="1_t88pq"]
 [ext_resource type="PackedScene" uid="uid://cf1yku550h3qp" path="res://drill_player.tscn" id="1_wbfu4"]
-[ext_resource type="Script" path="res://map_manager.gd" id="1_xkndl"]
+[ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://map_manager.gd" id="1_xkndl"]
 [ext_resource type="Texture2D" uid="uid://b4oyctppr1g8r" path="res://ground.png" id="3_sb48q"]
-[ext_resource type="Script" path="res://ui.gd" id="3_u44n3"]
+[ext_resource type="Script" uid="uid://cbpt2rql6xa37" path="res://ui.gd" id="3_u44n3"]
 
 [node name="Game" type="Node2D" unique_id=803279900]
+script = ExtResource("1_r0x5m")
+
+[node name="ShopManager" type="Node2D" parent="." unique_id=1967598872]
+script = ExtResource("1_t88pq")
+
+[node name="DrillPoint" type="Node2D" parent="ShopManager" unique_id=498177832]
+position = Vector2(859, 113)
+
+[node name="CameraShop" type="Camera2D" parent="ShopManager" unique_id=1658845830]
+position = Vector2(964, 82)
+enabled = false
+zoom = Vector2(3, 3)
+
+[node name="ButtonVenture" type="Button" parent="ShopManager" unique_id=1579673257]
+visible = false
+offset_left = 804.0
+offset_top = -4.0
+offset_right = 923.0
+offset_bottom = 27.0
+text = "Venture Down"
 
 [node name="MapManager" type="Node2D" parent="." unique_id=1397447767 node_paths=PackedStringArray("ui")]
 script = ExtResource("1_xkndl")
@@ -25,7 +47,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1200, 500)
 
 [node name="StartPoint" type="Node2D" parent="MapManager" unique_id=259385086]
-position = Vector2(567, 144)
+position = Vector2(567, 190)
 
 [node name="Control" type="Control" parent="." unique_id=1506751124]
 layout_mode = 3
@@ -54,3 +76,5 @@ offset_right = 1152.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Fuel: 100 / 100"
+
+[connection signal="pressed" from="ShopManager/ButtonVenture" to="ShopManager" method="_pressed_venture_button"]
