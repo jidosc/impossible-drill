@@ -1,22 +1,76 @@
 [gd_scene format=3 uid="uid://bl2a26uce4ice"]
 
 [ext_resource type="Script" uid="uid://b4s2x2xmjxcc4" path="res://shop_manager.gd" id="1_vaiew"]
+[ext_resource type="Theme" uid="uid://by02dbi6gqnt2" path="res://scenes/shop_theme.tres" id="2_52e1r"]
+[ext_resource type="PackedScene" uid="uid://ccylebkwml8t0" path="res://scenes/shop_item.tscn" id="3_8d0om"]
 
 [node name="ShopManager" type="Node2D" unique_id=760973937]
+visible = false
 script = ExtResource("1_vaiew")
 
 [node name="CameraShop" type="Camera2D" parent="." unique_id=104055240]
 enabled = false
 zoom = Vector2(2, 2)
 
-[node name="ButtonVenture" type="Button" parent="." unique_id=1483343131]
-offset_left = -105.0
-offset_top = -144.0
-offset_right = 14.0
-offset_bottom = -113.0
+[node name="DrillPoint" type="Node2D" parent="." unique_id=1858706309]
+position = Vector2(-92, -72)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1066310551]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -160.0
+offset_right = 120.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=693544631]
+layout_mode = 2
+
+[node name="LabelOre" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1380914365]
+layout_mode = 2
+theme = ExtResource("2_52e1r")
+text = "Ore: 57"
+
+[node name="Shop" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1540158292]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrades" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Shop" unique_id=1343223150]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Speed" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=877585486 instance=ExtResource("3_8d0om")]
+layout_mode = 2
+description = "More speed?"
+cost = 5
+type = "SPEED"
+
+[node name="Turn" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=1208042636 instance=ExtResource("3_8d0om")]
+layout_mode = 2
+description = "Sharper turns?"
+cost = 5
+type = "SPEED"
+
+[node name="Fuel" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=1092184979 instance=ExtResource("3_8d0om")]
+layout_mode = 2
+description = "More fuel capacity?"
+type = "FUEL"
+
+[node name="ButtonVenture" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1483343131]
+layout_mode = 2
+theme = ExtResource("2_52e1r")
 text = "Venture Down"
 
-[node name="DrillPoint" type="Node2D" parent="." unique_id=1858706309]
-position = Vector2(-63, -35)
-
-[connection signal="pressed" from="ButtonVenture" to="." method="_pressed_venture_button"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVenture" to="." method="_pressed_venture_button"]

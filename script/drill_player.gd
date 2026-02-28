@@ -2,13 +2,11 @@ class_name Player extends CharacterBody2D
 @export var ui: UI
 @onready var screen_size = get_viewport_rect().size
 var manager: MapManager
-const SPEED = 100.0
-const JUMP_VELOCITY = -400.0
-const MAX_SPEED = 150
+var speed = 100.0
 var turn_rate = 0.08
 var active = true
-const MAX_FUEL = 100
-var current_fuel = MAX_FUEL
+var max_fuel = 100
+var current_fuel = max_fuel
 var fuel_drain_rate = 10
 
 var shake_timer = 0.0
@@ -72,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		rotation = initial_rotation + clamp(angle_diff, -MAX_ROTATION, MAX_ROTATION)
 
 	var speed_noise = randf_range(0.8, 1.2)
-	velocity = Vector2.DOWN.rotated(rotation) * SPEED * speed_noise
+	velocity = Vector2.DOWN.rotated(rotation) * speed * speed_noise
 
 	shake_timer -= delta
 	if shake_timer <= 0:
@@ -90,7 +88,7 @@ func _physics_process(delta: float) -> void:
 	if current_fuel <= 0:
 		end_travel()
 	if ui != null:
-		ui.update_fuel(current_fuel, MAX_FUEL)
+		ui.update_fuel(current_fuel, max_fuel)
 
 func _update_trail() -> void:
 	if trail == null or not trail_enabled:
@@ -118,7 +116,7 @@ func end_travel() -> void:
 		manager.reset_drill(self)
 
 func refuel():
-	current_fuel = MAX_FUEL
+	current_fuel = max_fuel
 	active = true
 
 func _on_timer_timeout() -> void:

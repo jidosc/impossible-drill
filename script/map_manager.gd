@@ -1,6 +1,6 @@
 class_name MapManager extends Node2D
 
-signal returned_to_surface(player: Player)
+signal returned_to_surface(player: Player, ore: int)
 
 @export var ui: UI
 var packed_ore: PackedScene = preload("res://scenes/ore.tscn")
@@ -16,14 +16,15 @@ func _ready() -> void:
 	if ui != null:
 		$DrillPlayer.ui = ui
 	
-func spawn_drill(drill: Player):
+func spawn_drill(drill: Player, available_ore: int):
+	collected_ore = available_ore
 	drill.position = $StartPoint.position
 	drill.refuel()
 	add_child(drill)
 	
 func reset_drill(drill: Player):
 	remove_child(drill)
-	returned_to_surface.emit(drill)
+	returned_to_surface.emit(drill, collected_ore)
 
 func distribute_ore(amount: int):
 	if not amount is int:
