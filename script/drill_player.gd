@@ -97,8 +97,6 @@ func _update_trail() -> void:
 		return
 	var world_pos = global_position
 
-	
-
 	if trail.points.size() == 0:
 		trail.points = PackedVector2Array([world_pos])
 		return
@@ -127,4 +125,4 @@ func _on_timer_timeout() -> void:
 #A PROCESS TO CLAMP PLAYER INSIDE OF THE CAMERA VIEWPORT
 func _process(_delta: float) -> void:
 	var margin = 16
-	position.x = clamp(position.x,margin,screen_size.x - margin)
+	position.x = clamp(position.x, margin, 480 - margin)

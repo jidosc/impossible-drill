@@ -30,6 +30,7 @@ func spawn_drill(drill: Player, available_ore: int):
 	collected_ore = available_ore
 	drill.position = $StartPoint.position
 	drill.refuel()
+	drill.trail_enabled = true
 	add_child(drill)
 	
 func reset_drill(drill: Player):
