@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cf1yku550h3qp"]
+[gd_scene format=3 uid="uid://cvcur1d1xmfcg"]
 
-[ext_resource type="Script" uid="uid://dmygtikb8vlu4" path="res://drill_player.gd" id="1_1gavp"]
-[ext_resource type="Texture2D" uid="uid://n412adkhtt0r" path="res://DrillFinal.png" id="1_fmjyi"]
+[ext_resource type="Script" uid="uid://bbaphisvl2sqb" path="res://script/drill_player.gd" id="1_1gavp"]
+[ext_resource type="Texture2D" uid="uid://n412adkhtt0r" path="res://assets/DrillFinal.png" id="1_fmjyi"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_1gavp"]
 points = PackedVector2Array(0, 76, 119, -33, -115, -33)
