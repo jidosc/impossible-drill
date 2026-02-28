@@ -13,6 +13,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_lrx6i")
 script = ExtResource("1_btjjm")
 description_label = NodePath("MarginContainer/HBoxContainer/LabelDescription")
 cost_label = NodePath("MarginContainer/HBoxContainer/LabelCost")
@@ -44,11 +45,6 @@ size_flags_horizontal = 3
 theme = ExtResource("1_lrx6i")
 text = "Hej där jag hter Oscar och gjorde detta vackra spel"
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer" unique_id=480777308]
-layout_mode = 2
-theme = ExtResource("1_lrx6i")
-text = "Buy"
-
 [node name="LabelCost" type="Label" parent="MarginContainer/HBoxContainer" unique_id=995372374]
 unique_name_in_owner = true
 layout_mode = 2
@@ -56,5 +52,10 @@ size_flags_horizontal = 3
 theme = ExtResource("1_lrx6i")
 text = "Cost: 11"
 horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer" unique_id=480777308]
+layout_mode = 2
+theme = ExtResource("1_lrx6i")
+text = "Buy"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

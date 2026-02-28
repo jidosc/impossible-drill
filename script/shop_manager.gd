@@ -19,25 +19,29 @@ func open_shop(_drill: Player, collected_ore: int):
 	visible = true
 	$CameraShop.enabled = true
 	drill.position = $DrillPoint.position
+	drill.scale = Vector2(0.4, 0.4)
 	drill.rotation = 0
 	add_child(drill)
 
 func update_ore():
-	$MarginContainer/VBoxContainer/LabelOre.text = "Ore: %s" % available_ore 
+	$MarginContainer/VBoxContainer/HBoxContainer/LabelOre.text = "Ore: %s" % available_ore 
 
 func _pressed_venture_button():
 	$CameraShop.enabled = false
 	visible = false
+	drill.scale = Vector2(0.2, 0.2)
 	remove_child(drill)
 	venture_down.emit(drill, available_ore)
 
-func _upgrade_bought(type: String, cost: int):
+func _upgrade_bought(upgrade: Upgrade):
 	print("bought")
+	var cost = upgrade.cost
 	if available_ore < cost:
 		return
 	available_ore -= cost
+	upgrade.cost += 1
 	update_ore()
-	match type:
+	match upgrade.type:
 		"FUEL":
 			drill.max_fuel += 10
 		"TURN":

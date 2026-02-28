@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://ti58lklnwjt6"]
+
+[ext_resource type="Theme" uid="uid://by02dbi6gqnt2" path="res://scenes/shop_theme.tres" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://n412adkhtt0r" path="res://assets/DrillFinal.png" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cqd24iegyamvi" path="res://image-removebg-preview(4).png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://ca70jhabredeu" path="res://woman-holding-diamond-isolated-on-white-F8T97M.png" id="5_glbon"]
+[ext_resource type="Texture2D" uid="uid://p5igscc7guff" path="res://assets/cage.png" id="6_nlkkf"]
+
+[node name="MainMenu" type="Control" unique_id=1866019234]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1665855096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7vrkn")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=982317867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=361270337]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=317261699]
+layout_mode = 2
+theme = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 100
+text = "Fredrik Borrmans Äventyr 
+under Jord, Skorpan"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1784946976]
+layout_mode = 2
+theme = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 128
+text = "Play"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1864935232]
+layout_mode = 2
+theme = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 128
+text = "Quit"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1387700068]
+layout_mode = 2
+theme = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 64
+text = "Art:
+Jonas
+
+Code:
+Alexander
+Oscar
+Amjad
+
+Music:
+Felix"
+
+[node name="DrillFinal" type="Sprite2D" parent="." unique_id=947601705]
+position = Vector2(644.9381, 1319.5442)
+rotation = 3.5430229
+scale = Vector2(1.6689162, 1.6689162)
+texture = ExtResource("3_jix8l")
+
+[node name="ImageRemovebgPreview(4)" type="Sprite2D" parent="." unique_id=394621635]
+position = Vector2(757.61865, 1111.4077)
+rotation = 0.4520815
+scale = Vector2(1.266966, 1.266966)
+texture = ExtResource("4_glbon")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=739044024]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 1532.0
+offset_right = 1393.6771
+offset_bottom = 1887.0
+texture = ExtResource("5_glbon")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Cage" type="Sprite2D" parent="." unique_id=170692145]
+position = Vector2(1203.0001, 1553.0001)
+scale = Vector2(0.236301, 0.23630099)
+texture = ExtResource("6_nlkkf")

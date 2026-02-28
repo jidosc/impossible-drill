@@ -4,8 +4,11 @@
 [ext_resource type="Theme" uid="uid://by02dbi6gqnt2" path="res://scenes/shop_theme.tres" id="2_52e1r"]
 [ext_resource type="PackedScene" uid="uid://ccylebkwml8t0" path="res://scenes/shop_item.tscn" id="3_8d0om"]
 [ext_resource type="Texture2D" uid="uid://dij2l3ysi3h78" path="res://assets/shop-keeper.png" id="4_gx78v"]
+[ext_resource type="Texture2D" uid="uid://dhxgi8ek58ksf" path="res://assets/crane.png" id="4_hal1w"]
 [ext_resource type="Texture2D" uid="uid://di8enkt1qyei" path="res://assets/wildwest.png" id="4_mv7ed"]
-[ext_resource type="Texture2D" uid="uid://u6t5taxxv5f4" path="res://assets/textbox.png" id="6_rhy2b"]
+[ext_resource type="Texture2D" uid="uid://ca70jhabredeu" path="res://woman-holding-diamond-isolated-on-white-F8T97M.png" id="6_kd3qn"]
+[ext_resource type="Texture2D" uid="uid://p5igscc7guff" path="res://assets/cage.png" id="6_rjgfn"]
+[ext_resource type="Texture2D" uid="uid://sk7jsy7crsrw" path="res://assets/shopkeeper.png" id="8_hal1w"]
 
 [node name="ShopManager" type="Node2D" unique_id=760973937]
 script = ExtResource("1_8d0om")
@@ -15,9 +18,9 @@ enabled = false
 zoom = Vector2(2, 2)
 
 [node name="DrillPoint" type="Node2D" parent="." unique_id=1858706309]
-position = Vector2(76, 307)
+position = Vector2(76, 171)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2014987323]
+[node name="Background" type="TextureRect" parent="." unique_id=2014987323]
 offset_left = -750.0
 offset_top = -485.0
 offset_right = 1781.3379
@@ -28,63 +31,32 @@ expand_mode = 3
 stretch_mode = 4
 flip_h = true
 
-[node name="Control" type="Control" parent="." unique_id=1863846454]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -98.0
-offset_top = 97.0
-offset_right = -58.0
-offset_bottom = 137.0
-
-[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1880878217]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -5.875
-anchor_top = 0.5
-anchor_right = 3.0
-anchor_bottom = 9.075
-offset_left = -15.0
-offset_top = -120.11293
-offset_right = 210.0
-offset_bottom = -57.112915
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("4_gx78v")
+[node name="Woman" type="TextureRect" parent="." unique_id=377179171]
+offset_left = -311.0
+offset_top = -8.0
+offset_right = -199.22852
+offset_bottom = 118.0
+texture = ExtResource("6_kd3qn")
 expand_mode = 1
 stretch_mode = 4
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect3" type="TextureRect" parent="Control" unique_id=449778898]
-layout_mode = 0
-offset_left = 375.99997
-offset_top = -57.112923
-offset_right = 883.66235
-offset_bottom = 243.24667
-rotation = 2.819221
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("6_rhy2b")
+[node name="Crane" type="TextureRect" parent="." unique_id=2061990163]
+offset_left = 9.0
+offset_top = -247.0
+offset_right = 764.0
+offset_bottom = 604.1115
+texture = ExtResource("4_hal1w")
 expand_mode = 1
 stretch_mode = 4
-flip_v = true
 
-[node name="Label" type="Label" parent="Control" unique_id=505631921]
-layout_mode = 0
-offset_left = 37.0
-offset_top = -200.0
-offset_right = 310.0
-offset_bottom = -57.1532
-rotation = -0.3464325
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme = ExtResource("2_52e1r")
-theme_override_font_sizes/font_size = 20
-text = "CEO of Borrman Industries:
-Good job mining all that ore, 
-Pal! Buy some upgrades for
-yourself, and then keep 
-mining. Neverstopthegrind!"
-vertical_alignment = 1
+[node name="Cage" type="TextureRect" parent="." unique_id=478147766]
+offset_left = -356.0
+offset_top = -117.0
+offset_right = -152.85976
+offset_bottom = 112.0
+texture = ExtResource("6_rjgfn")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1066310551]
 anchors_preset = 15
@@ -106,7 +78,26 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=693544631]
 layout_mode = 2
 
-[node name="LabelOre" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1380914365]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1062738665]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1263212060]
+layout_mode = 2
+texture = ExtResource("8_hal1w")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1394411287]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_52e1r")
+theme_override_font_sizes/font_size = 24
+text = "Bernt Borrman:
+Welcome to my shop!
+Would you like..."
+
+[node name="LabelOre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1380914365]
 layout_mode = 2
 theme = ExtResource("2_52e1r")
 text = "Ore: 57"
@@ -147,11 +138,37 @@ description = "Less shake?"
 cost = 5
 type = "SHAKE"
 
+[node name="Borrman" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=740094168 instance=ExtResource("3_8d0om")]
+layout_mode = 2
+description = "Fröken Borrman?"
+cost = 1000
+type = "SHAKE"
+
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1279676170]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
+size_flags_stretch_ratio = 2.0
 color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=268240288]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=484563053]
+layout_mode = 2
+texture = ExtResource("4_gx78v")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1218640881]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_52e1r")
+theme_override_font_sizes/font_size = 24
+text = "CEO Borrman of Borrman Industries:
+Good job mining all that ore, Pal! Buy some 
+upgrades for yourself, and then keep mining.
+NeverStopTheGrind"
 
 [node name="ButtonVenture" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1483343131]
 layout_mode = 2
