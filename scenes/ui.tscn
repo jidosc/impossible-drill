@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://2wdrknkl0anc"]
+
+[ext_resource type="Script" uid="uid://cbpt2rql6xa37" path="res://script/ui.gd" id="1_nt7q6"]
+
+[node name="UI" type="Control" unique_id=1077403594]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nt7q6")
+
+[node name="LabelOre" type="Label" parent="." unique_id=1060576635]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 77.0
+offset_bottom = 34.0
+text = "Ore: XXX"
+
+[node name="LabelFuel" type="Label" parent="." unique_id=1122847353]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 325.0
+offset_top = 10.0
+offset_right = 432.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "Fuel: XXX/XXX"

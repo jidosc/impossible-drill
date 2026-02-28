@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://pj8qoltao68n"]
+[gd_scene format=3 uid="uid://fk6u2aigm781"]
 
 [ext_resource type="Texture2D" uid="uid://df0mxiroow0ar" path="res://assets/icon.svg" id="1_4wuf8"]
-[ext_resource type="PackedScene" uid="uid://cf1yku550h3qp" path="res://scenes/drill_player.tscn" id="2_s02eq"]
+[ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="2_s02eq"]
 
 [node name="TestMap" type="Node2D" unique_id=566151500]
 

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://degkjx0y6smm4"]
+
+[ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://script/map_manager.gd" id="1_m27ba"]
+[ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="2_1q1v5"]
+[ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://dirt2.png" id="2_nm55u"]
+
+[node name="MapManager" type="Node2D" unique_id=203988405]
+script = ExtResource("1_m27ba")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=276751498]
+z_index = -1
+texture_repeat = 2
+position = Vector2(0, 164)
+texture = ExtResource("2_nm55u")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 480)
+
+[node name="StartPoint" type="Node2D" parent="." unique_id=1165352795]
+position = Vector2(205, 152)
+
+[node name="DrillPlayer" parent="." unique_id=2080515335 instance=ExtResource("2_1q1v5")]
+position = Vector2(209.99998, 154.99998)

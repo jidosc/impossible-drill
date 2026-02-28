@@ -89,7 +89,8 @@ func _physics_process(delta: float) -> void:
 	current_fuel -= delta * fuel_drain_rate
 	if current_fuel <= 0:
 		end_travel()
-	ui.update_fuel(current_fuel, MAX_FUEL)
+	if ui != null:
+		ui.update_fuel(current_fuel, MAX_FUEL)
 
 func _update_trail() -> void:
 	if trail == null or not trail_enabled:

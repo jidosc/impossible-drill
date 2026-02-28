@@ -13,6 +13,8 @@ var LOAD_DISTANCE := 2
 func _ready() -> void:
 	distribute_ore(100)
 	$DrillPlayer.manager = self
+	if ui != null:
+		$DrillPlayer.ui = ui
 	
 func spawn_drill(drill: Player):
 	drill.position = $StartPoint.position
@@ -41,7 +43,8 @@ func add_ore(at_pos: Vector2):
 func collect_ore(ore: Ore):
 	ore.call_deferred("queue_free")
 	collected_ore += 1
-	ui.update_ore(collected_ore)
+	if ui != null:
+		ui.update_ore(collected_ore)
 	
 func get_player_chunk(player_y):
 	return int(player_y/chunk_height)

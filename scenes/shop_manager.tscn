@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bl2a26uce4ice"]
+
+[ext_resource type="Script" uid="uid://b4s2x2xmjxcc4" path="res://shop_manager.gd" id="1_vaiew"]
+
+[node name="ShopManager" type="Node2D" unique_id=760973937]
+script = ExtResource("1_vaiew")
+
+[node name="CameraShop" type="Camera2D" parent="." unique_id=104055240]
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="ButtonVenture" type="Button" parent="." unique_id=1483343131]
+offset_left = -105.0
+offset_top = -144.0
+offset_right = 14.0
+offset_bottom = -113.0
+text = "Venture Down"
+
+[node name="DrillPoint" type="Node2D" parent="." unique_id=1858706309]
+position = Vector2(-63, -35)
+
+[connection signal="pressed" from="ButtonVenture" to="." method="_pressed_venture_button"]
