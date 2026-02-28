@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://brm5nmavahsxa"]
+
+[ext_resource type="PackedScene" uid="uid://b86oi0qib73s7" path="res://scenes/ore.tscn" id="1_jas4a"]
+[ext_resource type="Script" uid="uid://b6r4dby6hgqbu" path="res://scenes/chunk.gd" id="1_jtw3q"]
+
+[node name="Chunk" type="Node2D" unique_id=217917006]
+script = ExtResource("1_jtw3q")
+
+[node name="ground" type="Sprite2D" parent="." unique_id=267479805]
+
+[node name="Ore" parent="." unique_id=989235731 instance=ExtResource("1_jas4a")]
