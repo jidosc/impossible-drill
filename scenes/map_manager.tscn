@@ -1,15 +1,31 @@
 [gd_scene format=3 uid="uid://degkjx0y6smm4"]
 
 [ext_resource type="Script" uid="uid://bylgnw6fykted" path="res://script/map_manager.gd" id="1_m27ba"]
+[ext_resource type="PackedScene" uid="uid://b86oi0qib73s7" path="res://scenes/ore.tscn" id="2_0gfw4"]
 [ext_resource type="PackedScene" uid="uid://blcy7rpis7b3" path="res://scenes/drill_player.tscn" id="2_1q1v5"]
 [ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="2_nm55u"]
 [ext_resource type="PackedScene" uid="uid://brm5nmavahsxa" path="res://scenes/chunk.tscn" id="2_or80t"]
+[ext_resource type="PackedScene" uid="uid://b323m31dwi0hj" path="res://scenes/ore_2.tscn" id="2_xwqho"]
+[ext_resource type="PackedScene" uid="uid://0hiu5ml3q6lk" path="res://scenes/ore_3.tscn" id="3_bqlam"]
 [ext_resource type="Texture2D" uid="uid://di8enkt1qyei" path="res://assets/wildwest.png" id="3_itoub"]
 [ext_resource type="PackedScene" uid="uid://d4bw7dmaytt83" path="res://scenes/start_chunk.tscn" id="6_ennt4"]
 [ext_resource type="AudioStream" uid="uid://dn8be5xt7o73q" path="res://assets/jagborradeetthålenegång.mp3" id="8_a8ec3"]
+[ext_resource type="PackedScene" uid="uid://nbn2roule101" path="res://scenes/ore_4.tscn" id="4_0gfw4"]
+[ext_resource type="PackedScene" uid="uid://yup6lcm6y4g8" path="res://scenes/ore_5.tscn" id="5_dtpev"]
+[ext_resource type="Script" uid="uid://dd15xhifdgyxq" path="res://scenes/ScreenShake.gd" id="5_qcnjr"]
+[ext_resource type="PackedScene" uid="uid://dxqqyxfwj81a1" path="res://scenes/ore_6.tscn" id="6_28d0s"]
+[ext_resource type="PackedScene" uid="uid://d4bw7dmaytt83" path="res://scenes/start_chunk.tscn" id="6_ennt4"]
+[ext_resource type="PackedScene" uid="uid://df4od257nxuqv" path="res://scenes/ore_7.tscn" id="7_bqlam"]
 
 [node name="MapManager" type="Node2D" unique_id=203988405]
 script = ExtResource("1_m27ba")
+ore_type_1 = ExtResource("2_0gfw4")
+ore_type_2 = ExtResource("2_xwqho")
+ore_type_3 = ExtResource("3_bqlam")
+ore_type_4 = ExtResource("4_0gfw4")
+ore_type_5 = ExtResource("5_dtpev")
+ore_type_6 = ExtResource("6_28d0s")
+ore_type_7 = ExtResource("7_bqlam")
 chunk_scene = ExtResource("2_or80t")
 
 [node name="BackBackground" type="Sprite2D" parent="." unique_id=1395688330]
@@ -19,7 +35,6 @@ scale = Vector2(0.8828337, 0.8828338)
 texture = ExtResource("3_itoub")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=276751498]
-visible = false
 z_index = -1
 texture_repeat = 2
 position = Vector2(0, 164)

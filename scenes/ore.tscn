@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b86oi0qib73s7"]
 
 [ext_resource type="Script" uid="uid://bxxmpifq0nmfw" path="res://script/ore.gd" id="1_r2ayp"]
+[ext_resource type="Texture2D" uid="uid://caawbxjptns0f" path="res://Stone.png" id="2_e1maq"]
 [ext_resource type="Texture2D" uid="uid://c4k4s0kc8ssm1" path="res://ore1.png" id="2_f6cf6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2ayp"]
@@ -9,6 +10,8 @@ radius = 7.071068
 [node name="Ore" type="Node2D" unique_id=989235731]
 z_index = 9
 script = ExtResource("1_r2ayp")
+value = 1
+sprite = ExtResource("2_e1maq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=849799211]
 

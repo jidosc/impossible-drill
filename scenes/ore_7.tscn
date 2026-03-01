@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://df4od257nxuqv"]
+
+[ext_resource type="PackedScene" uid="uid://b86oi0qib73s7" path="res://scenes/ore.tscn" id="1_p4n1s"]
+[ext_resource type="Texture2D" uid="uid://bhk2w7nl1khyd" path="res://ram.png" id="2_bdfll"]
+
+[node name="Ore_7" unique_id=989235731 instance=ExtResource("1_p4n1s")]
+value = 7
+sprite = ExtResource("2_bdfll")
