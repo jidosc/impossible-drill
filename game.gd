@@ -13,9 +13,9 @@ func returned_to_surface(drill: Player, collected_ore: int):
 	await blackout()
 	$UI.visible = false
 	$MapManager.visible = false
-	map_manager.call_deferred("remove_child", drill)
-	await whiteout()
 	shop_manager.open_shop(drill, collected_ore)
+	drill.reparent(shop_manager)
+	await whiteout()
 
 func blackout():
 	var black: Tween = get_tree().create_tween()
@@ -29,9 +29,12 @@ func whiteout():
 
 func return_to_ground(drill: Player, available_ore: int):
 	await blackout()
+	$ShopManager/CameraShop.enabled = false
+	$ShopManager.visible = false
+	drill.scale = Vector2(0.2, 0.2)
 	$UI.visible = true
 	$MapManager.visible = true
-	shop_manager.call_deferred("remove_child", drill)
-	await whiteout()
+	drill.reparent(map_manager)
 	map_manager.spawn_drill(drill, available_ore)
+	await whiteout()
 	

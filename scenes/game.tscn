@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cf7tdlo2qvaee" path="res://game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bl2a26uce4ice" path="res://scenes/shop_manager.tscn" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://w756jmvd782w" path="res://assets/muddy_ground.jpg" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://degkjx0y6smm4" path="res://scenes/map_manager.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://2wdrknkl0anc" path="res://scenes/ui.tscn" id="3_iywne"]
 
@@ -18,3 +19,9 @@ ui = NodePath("../UI")
 [node name="UI" parent="." unique_id=1077403594 instance=ExtResource("3_iywne")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=772240294]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1020245970]
+z_index = -3
+z_as_relative = false
+scale = Vector2(4, 4)
+texture = ExtResource("2_iywne")
