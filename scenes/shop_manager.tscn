@@ -117,25 +117,25 @@ theme_override_constants/separation = 8
 [node name="Speed" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=877585486 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "More speed?"
-cost = 4
+cost = 2
 type = "SPEED"
 
 [node name="Turn" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=1208042636 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Sharper turns?"
-cost = 7
+cost = 1
 type = "SPEED"
 
 [node name="Fuel" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=1092184979 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "More fuel capacity?"
-cost = 8
+cost = 4
 type = "FUEL"
 
 [node name="Shake" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=706237353 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Less shake?"
-cost = 5
+cost = 3
 type = "SHAKE"
 
 [node name="Borrman" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=740094168 instance=ExtResource("3_8d0om")]

@@ -37,11 +37,11 @@ func _upgrade_bought(upgrade: Upgrade):
 	update_ore()
 	match upgrade.type:
 		"FUEL":
-			drill.max_fuel += 10
+			drill.max_fuel += 15
 		"TURN":
-			drill.turn_rate += 0.1
+			drill.turn_rate += 0.2
 		"SPEED":
-			drill.speed += 10
+			drill.speed += 15
 		"SHAKE":
 			drill.shake_reduction += 0.1
 			
