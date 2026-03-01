@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func returned_to_surface(drill: Player, collected_ore: int):
 	drill.stop_sounds()
+	$AudioRope.play()
 	await blackout()
 	$UI.visible = false
 	$MapManager.visible = false

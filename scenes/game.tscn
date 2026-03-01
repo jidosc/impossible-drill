@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://w756jmvd782w" path="res://assets/muddy_ground.jpg" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://degkjx0y6smm4" path="res://scenes/map_manager.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://2wdrknkl0anc" path="res://scenes/ui.tscn" id="3_iywne"]
+[ext_resource type="AudioStream" uid="uid://bf38ahbmsdj68" path="res://assets/metalPullUpp.mp3" id="6_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=2145070877]
 script = ExtResource("1_lbhrr")
@@ -25,3 +26,8 @@ z_index = -3
 z_as_relative = false
 scale = Vector2(4, 4)
 texture = ExtResource("2_iywne")
+
+[node name="AudioRope" type="AudioStreamPlayer" parent="." unique_id=234211740]
+stream = ExtResource("6_p57ef")
+volume_db = 24.0
+pitch_scale = 0.8

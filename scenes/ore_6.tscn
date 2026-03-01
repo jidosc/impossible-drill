@@ -4,5 +4,5 @@
 [ext_resource type="Texture2D" uid="uid://cw6hwk2ncsm1u" path="res://Diamond.png" id="2_knqd4"]
 
 [node name="Ore_6" unique_id=989235731 instance=ExtResource("1_knqd4")]
-value = 6
+value = 10
 sprite = ExtResource("2_knqd4")

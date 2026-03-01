@@ -57,8 +57,8 @@ func _upgrade_bought(upgrade: Upgrade):
 			toggle_borrman.emit()
 			
 func activate_win_sequence():
-	var run_time: int = (Time.get_ticks_msec() - Common.start_ticks) / 1000
-	var hours = floor(run_time / 3600)
+	var run_time: int = (Time.get_ticks_msec() - Common.start_ticks) / 1000.0
+	var hours = floor(run_time / 3600.0)
 	var minutes = floor((run_time - hours * 3600) / 60)
 	var seconds = run_time - hours * 3600 - minutes * 60
 	var time_str: String = ""
