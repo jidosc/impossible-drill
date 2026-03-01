@@ -6,30 +6,28 @@
 [node name="start_chunk" type="Node2D" unique_id=1884689235]
 
 [node name="grass" type="Node2D" parent="." unique_id=1411490443]
-position = Vector2(240.87505, 139.37494)
+z_index = 2
+position = Vector2(240.875, 140.94)
 scale = Vector2(0.23547363, 0.31408688)
 
-[node name="grass3" type="Sprite2D" parent="grass" unique_id=47753895]
-position = Vector2(-938.0033, 0)
-texture = ExtResource("1_tv5tt")
-region_enabled = true
-region_rect = Rect2(0, 0, 250, 200)
-
-[node name="grass2" type="Sprite2D" parent="grass" unique_id=1386555821]
-position = Vector2(-543.5852, 0)
-texture = ExtResource("1_tv5tt")
-
-[node name="grass3" type="Sprite2D" parent="grass/grass2" unique_id=1403320553]
-position = Vector2(896.5969, 0)
-texture = ExtResource("1_tv5tt")
-region_enabled = true
-region_rect = Rect2(0, 0, 250, 200)
-
-[node name="grass2" type="Sprite2D" parent="grass/grass2" unique_id=2118181890]
-position = Vector2(1291.0151, 0)
-texture = ExtResource("1_tv5tt")
-
 [node name="grass" type="Sprite2D" parent="grass" unique_id=11191880]
+position = Vector2(-7.962869, -29.848236)
+texture = ExtResource("1_tv5tt")
+
+[node name="grass4" type="Sprite2D" parent="grass" unique_id=954068642]
+position = Vector2(-526.06757, -29.848236)
+texture = ExtResource("1_tv5tt")
+
+[node name="grass5" type="Sprite2D" parent="grass" unique_id=1126770886]
+position = Vector2(-959.2371, -29.848236)
+texture = ExtResource("1_tv5tt")
+
+[node name="grass2" type="Sprite2D" parent="grass" unique_id=1454267238]
+position = Vector2(510.14188, -29.848236)
+texture = ExtResource("1_tv5tt")
+
+[node name="grass3" type="Sprite2D" parent="grass" unique_id=1403514141]
+position = Vector2(994.27246, -29.848236)
 texture = ExtResource("1_tv5tt")
 
 [node name="ground" type="Sprite2D" parent="." unique_id=486978047]
