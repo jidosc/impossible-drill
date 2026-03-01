@@ -111,10 +111,12 @@ func _update_trail() -> void:
 		trail.points = trail.points + PackedVector2Array([world_pos])
 
 func start_travel() -> void:
+	toggle_trail()
 	initial_rotation = rotation
 	rotation_locked = true
 
 func end_travel() -> void:
+	toggle_trail()
 	await get_tree().create_timer(2).timeout
 	active = false
 	$DrillSprite.position = Vector2.ZERO
