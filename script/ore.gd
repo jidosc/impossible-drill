@@ -7,5 +7,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var camera = get_viewport().get_camera_2d()
 		if camera is PlayerCamera:
 			camera._camera_shake()
+		body.drill_ore()
 		game_manager.collect_ore(self)
 		

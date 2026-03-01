@@ -35,8 +35,13 @@ func spawn_drill(drill: Player, available_ore: int):
 	drill.refuel()
 	drill.trail_enabled = true
 	
+	var music: AudioStreamPlayer = $MusicDrilling
+	music.stream_paused = false
+	
 func reset_drill(drill: Player):
+	$MusicDrilling.stream_paused = true
 	returned_to_surface.emit(drill, collected_ore)
+	
 func distribute_ore(amount: int, rect : Rect2):
 	if not amount is int:
 		return Error.ERR_INVALID_PARAMETER

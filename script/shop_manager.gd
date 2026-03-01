@@ -15,6 +15,9 @@ func _ready() -> void:
 		print("connected")
 
 func open_shop(_drill: Player, collected_ore: int):
+	if not $AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
+	$AudioStreamPlayer.stream_paused = false
 	available_ore = collected_ore
 	update_ore()
 	drill = _drill
@@ -29,6 +32,7 @@ func update_ore():
 	$con/VBoxContainer/HBoxContainer/LabelOre.text = "Ore: %s" % available_ore 
 
 func _pressed_venture_button():
+	$AudioStreamPlayer.stream_paused = true
 	allowed_to_buy = false
 	venture_down.emit(drill, available_ore)
 
@@ -61,13 +65,13 @@ func activate_win_sequence():
 	var seconds = run_time - hours * 3600 - minutes * 60
 	var time_str: String = ""
 	if hours > 0:
-		time_str += hours
+		time_str += str(hours)
 		if hours > 1:
 			time_str += " hours, "
 		else:
 			time_str += " hour, "
 	if minutes > 0:
-		time_str += minutes
+		time_str += str(minutes)
 		if minutes > 1:
 			time_str += " minutes, "
 		else:
@@ -85,5 +89,5 @@ func activate_win_sequence():
 	sizeup.tween_property($Woman, "scale", Vector2(3.0, 3.0), 1.0)
 	await sizeup.finished
 	
-	$LabelWin.text = "Thank you Fredrik Borrman!\nYou are such a rich man...\nbut what took you so long?\nI have been waiting for " + time_str
+	$LabelWin.text = "Thank you Fredrik Borrman!\nYou are such a rich man...\nbut what took you so long?\nI have been waiting for\n" + time_str
 	$LabelWin.show()

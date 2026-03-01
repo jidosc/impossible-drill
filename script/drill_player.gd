@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 @export var ui: UI
+@export var drill_sounds: Array[AudioStream]
+
 @onready var screen_size = get_viewport_rect().size
 var manager: MapManager
 var speed = 100.0
@@ -89,6 +91,11 @@ func _physics_process(delta: float) -> void:
 		end_travel()
 	if ui != null:
 		ui.update_fuel(current_fuel, max_fuel)
+
+func drill_ore():
+	if not $AudioDrill.playing:
+		$AudioDrill.stream = drill_sounds[randi_range(0, len(drill_sounds)-1)] 
+		$AudioDrill.play()
 
 func _update_trail() -> void:
 	if trail == null or not trail_enabled:
