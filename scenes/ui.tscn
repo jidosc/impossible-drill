@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://cbpt2rql6xa37" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Theme" uid="uid://by02dbi6gqnt2" path="res://scenes/shop_theme.tres" id="2_x4jx1"]
-[ext_resource type="Texture2D" uid="uid://ca70jhabredeu" path="res://woman-holding-diamond-isolated-on-white-F8T97M.png" id="3_yev5y"]
+[ext_resource type="Texture2D" uid="uid://dap0ttiibv41k" path="res://assets/cockpit.png" id="3_yev5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yev5y"]
 bg_color = Color(0.99999994, 0.35806787, 0.009368747, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=1639808077]
 script = ExtResource("1_nt7q6")
+
+[node name="Borrman" type="TextureRect" parent="." unique_id=1664189030]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yev5y")
+expand_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=372730666]
 anchors_preset = 15
@@ -28,13 +39,25 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="LabelOre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1060576635]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1375649800]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelOre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1060576635]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_x4jx1")
 theme_override_font_sizes/font_size = 48
 text = "Ore: XXX"
+
+[node name="LabelDepth" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=91095193]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_x4jx1")
+theme_override_font_sizes/font_size = 48
+text = "Depth: XXX"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1419257079]
 layout_mode = 2
@@ -61,30 +84,3 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 color = Color(1, 1, 1, 0)
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1154886040]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=80115200]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("3_yev5y")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/TextureRect" unique_id=1695418744]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -41.0
-offset_right = 187.0
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/TextureRect/MarginContainer" unique_id=1138876443]
-layout_mode = 2
-size_flags_vertical = 8
-theme = ExtResource("2_x4jx1")
-text = "do it for her"
-horizontal_alignment = 1

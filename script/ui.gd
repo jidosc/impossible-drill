@@ -7,3 +7,10 @@ func update_fuel(current, max_fuel):
 	
 func update_ore(current):
 	%LabelOre.text = "Ore: %d" % [current]
+
+func update_depth(current):
+	var modified = current / 100
+	%LabelDepth.text = "Depth: %dm" % modified
+
+func toggle_borrman():
+	%Borrman.visible = !%Borrman.visible

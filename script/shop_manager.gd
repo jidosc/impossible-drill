@@ -1,6 +1,7 @@
 class_name ShopManager extends Node2D
 
 signal venture_down(drill: Player)
+signal toggle_borrman()
 
 var drill: Player
 var available_ore: int = 0
@@ -44,4 +45,6 @@ func _upgrade_bought(upgrade: Upgrade):
 			drill.speed += 15
 		"SHAKE":
 			drill.shake_reduction += 0.1
+		"BORRMAN":
+			toggle_borrman.emit()
 			

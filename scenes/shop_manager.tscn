@@ -138,6 +138,11 @@ description = "Less shake?"
 cost = 3
 type = "SHAKE"
 
+[node name="BorrmanMode" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=21962973 instance=ExtResource("3_8d0om")]
+layout_mode = 2
+description = "To toggle Borrman© Mode©?"
+type = "BORRMAN"
+
 [node name="Borrman" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=740094168 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Fröken Borrman?"

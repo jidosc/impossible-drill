@@ -5,7 +5,7 @@
 
 [node name="ShopItem" type="Panel" unique_id=877585486 node_paths=PackedStringArray("description_label", "cost_label")]
 clip_contents = true
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 32)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

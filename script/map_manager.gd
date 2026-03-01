@@ -15,6 +15,7 @@ var player: Player
 func _process(_delta: float) -> void:
 	if player != null:
 		var player_y = player.global_position.y
+		ui.update_depth(player_y)
 		update_chunks(player_y)
 		
 		
