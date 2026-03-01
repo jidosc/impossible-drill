@@ -125,6 +125,7 @@ func end_travel() -> void:
 		
 func toggle_trail():
 	trail_enabled = !trail_enabled
+	$CPUParticles2D.emitting = !$CPUParticles2D.emitting
 	if trail_enabled:
 		# Start a brand new trail segment
 		_create_trail()

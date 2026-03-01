@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c2unyepy8ixlk" path="res://assets/drill3.mp3" id="4_iyhxq"]
 [ext_resource type="Script" uid="uid://dd15xhifdgyxq" path="res://scenes/ScreenShake.gd" id="4_x1213"]
 [ext_resource type="AudioStream" uid="uid://ixipk80u8b70" path="res://assets/Borr.mp3" id="8_tlaww"]
+[ext_resource type="Texture2D" uid="uid://c36tchicx6ej2" path="res://dirtScrap-removebg-preview-removebg-preview-removebg-preview.png" id="9_iyhxq"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_1gavp"]
 points = PackedVector2Array(0, 76, 119, -33, -115, -33)
@@ -53,6 +54,22 @@ autoplay = true
 volume_db = -10.0
 pitch_scale = 0.5
 max_polyphony = 5
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1864104854]
+position = Vector2(0, 75)
+rotation = -1.5714715
+amount = 19
+texture = ExtResource("9_iyhxq")
+lifetime = 0.3
+lifetime_randomness = 0.37
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 205.61
+initial_velocity_max = 448.6
+angular_velocity_min = -645.98
+angular_velocity_max = 430.66
+scale_amount_min = 0.03
+scale_amount_max = 0.04
 
 [connection signal="timeout" from="SpinTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="changeDirTimer" to="." method="_on_change_dir_timer_timeout"]
