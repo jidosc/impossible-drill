@@ -18,7 +18,7 @@ var torque_change_timer = 0.0
 
 # Mining trail
 var trail: Line2D
-const TRAIL_WIDTH = 18.0
+const TRAIL_WIDTH = 32.0
 const MIN_POINT_DISTANCE = 4.0  # how often to record a new point
 var trail_enabled := true
 
@@ -142,6 +142,7 @@ func refuel():
 
 func _on_timer_timeout() -> void:
 	$DrillSprite.scale.x = -$DrillSprite.scale.x
+	pass
 	
 #A PROCESS TO CLAMP PLAYER INSIDE OF THE CAMERA VIEWPORT
 func _process(_delta: float) -> void:
