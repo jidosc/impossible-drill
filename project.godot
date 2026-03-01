@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="impossible-drill"
-run/main_scene="uid://q4sjoo85omgv"
+run/main_scene="uid://ti58lklnwjt6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[autoload]
+
+Common="*uid://drqst2g4dca41"
 
 [display]
 

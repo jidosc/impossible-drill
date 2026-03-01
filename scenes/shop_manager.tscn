@@ -31,6 +31,18 @@ expand_mode = 3
 stretch_mode = 4
 flip_h = true
 
+[node name="LabelWin" type="Label" parent="." unique_id=1695031486]
+visible = false
+offset_left = -351.0
+offset_top = -195.0
+offset_right = 1306.0
+offset_bottom = -40.0
+theme = ExtResource("2_52e1r")
+text = "Thank you Fredrik Borrman! 
+You are such a rich man... 
+but what took you so long? 
+I have been waiting for XXX !"
+
 [node name="Woman" type="TextureRect" parent="." unique_id=377179171]
 offset_left = -311.0
 offset_top = -8.0
@@ -58,7 +70,7 @@ texture = ExtResource("6_rjgfn")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1066310551]
+[node name="con" type="MarginContainer" parent="." unique_id=1066310551]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -75,20 +87,20 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=693544631]
+[node name="VBoxContainer" type="VBoxContainer" parent="con" unique_id=693544631]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1062738665]
+[node name="HBoxContainer" type="HBoxContainer" parent="con/VBoxContainer" unique_id=1062738665]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1263212060]
+[node name="TextureRect" type="TextureRect" parent="con/VBoxContainer/HBoxContainer" unique_id=1263212060]
 layout_mode = 2
 texture = ExtResource("8_hal1w")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1394411287]
+[node name="Label" type="Label" parent="con/VBoxContainer/HBoxContainer" unique_id=1394411287]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_52e1r")
@@ -97,75 +109,75 @@ text = "Bernt Borrman:
 Welcome to my shop!
 Would you like..."
 
-[node name="LabelOre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1380914365]
+[node name="LabelOre" type="Label" parent="con/VBoxContainer/HBoxContainer" unique_id=1380914365]
 layout_mode = 2
 theme = ExtResource("2_52e1r")
 text = "Ore: 57"
 
-[node name="Shop" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1540158292]
+[node name="Shop" type="ScrollContainer" parent="con/VBoxContainer" unique_id=1540158292]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Upgrades" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Shop" unique_id=1343223150]
+[node name="Upgrades" type="VBoxContainer" parent="con/VBoxContainer/Shop" unique_id=1343223150]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="Speed" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=877585486 instance=ExtResource("3_8d0om")]
+[node name="Speed" parent="con/VBoxContainer/Shop/Upgrades" unique_id=877585486 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "More speed?"
 cost = 2
 type = "SPEED"
 
-[node name="Turn" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=1208042636 instance=ExtResource("3_8d0om")]
+[node name="Turn" parent="con/VBoxContainer/Shop/Upgrades" unique_id=1208042636 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Sharper turns?"
 cost = 1
 type = "SPEED"
 
-[node name="Fuel" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=1092184979 instance=ExtResource("3_8d0om")]
+[node name="Fuel" parent="con/VBoxContainer/Shop/Upgrades" unique_id=1092184979 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "More fuel capacity?"
 cost = 4
 type = "FUEL"
 
-[node name="Shake" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=706237353 instance=ExtResource("3_8d0om")]
+[node name="Shake" parent="con/VBoxContainer/Shop/Upgrades" unique_id=706237353 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Less shake?"
 cost = 3
 type = "SHAKE"
 
-[node name="BorrmanMode" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=21962973 instance=ExtResource("3_8d0om")]
+[node name="BorrmanMode" parent="con/VBoxContainer/Shop/Upgrades" unique_id=21962973 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "To toggle Borrman© Mode©?"
 type = "BORRMAN"
 
-[node name="Borrman" parent="MarginContainer/VBoxContainer/Shop/Upgrades" unique_id=740094168 instance=ExtResource("3_8d0om")]
+[node name="Wife" parent="con/VBoxContainer/Shop/Upgrades" unique_id=740094168 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Fröken Borrman?"
-cost = 1000
-type = "SHAKE"
+cost = 2
+type = "WIFE"
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1279676170]
+[node name="ColorRect" type="ColorRect" parent="con/VBoxContainer" unique_id=1279676170]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 color = Color(1, 1, 1, 0)
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=268240288]
+[node name="HBoxContainer2" type="HBoxContainer" parent="con/VBoxContainer" unique_id=268240288]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=484563053]
+[node name="TextureRect" type="TextureRect" parent="con/VBoxContainer/HBoxContainer2" unique_id=484563053]
 layout_mode = 2
 texture = ExtResource("4_gx78v")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1218640881]
+[node name="Label" type="Label" parent="con/VBoxContainer/HBoxContainer2" unique_id=1218640881]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_52e1r")
@@ -175,9 +187,9 @@ Good job mining all that ore, Pal! Buy some
 upgrades for yourself, and then keep mining.
 NeverStopTheGrind"
 
-[node name="ButtonVenture" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1483343131]
+[node name="ButtonVenture" type="Button" parent="con/VBoxContainer" unique_id=1483343131]
 layout_mode = 2
 theme = ExtResource("2_52e1r")
 text = "Venture Down"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVenture" to="." method="_pressed_venture_button"]
+[connection signal="pressed" from="con/VBoxContainer/ButtonVenture" to="." method="_pressed_venture_button"]
