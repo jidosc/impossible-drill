@@ -14,22 +14,17 @@ func _ready() -> void:
 func open_shop(_drill: Player, collected_ore: int):
 	available_ore = collected_ore
 	update_ore()
-	
 	drill = _drill
 	visible = true
 	$CameraShop.enabled = true
 	drill.position = $DrillPoint.position
 	drill.scale = Vector2(0.4, 0.4)
 	drill.rotation = 0
-	add_child(drill)
 
 func update_ore():
 	$MarginContainer/VBoxContainer/HBoxContainer/LabelOre.text = "Ore: %s" % available_ore 
 
 func _pressed_venture_button():
-	$CameraShop.enabled = false
-	visible = false
-	drill.scale = Vector2(0.2, 0.2)
 	venture_down.emit(drill, available_ore)
 
 func _upgrade_bought(upgrade: Upgrade):
