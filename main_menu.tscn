@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://by02dbi6gqnt2" path="res://scenes/shop_theme.tres" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://uykgvh2yhu1s" path="res://assets/dirt2.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://q12f18fdrrtj" path="res://main_menu.gd" id="1_qe12f"]
 [ext_resource type="Texture2D" uid="uid://n412adkhtt0r" path="res://assets/DrillFinal.png" id="3_jix8l"]
 [ext_resource type="Texture2D" uid="uid://cqd24iegyamvi" path="res://image-removebg-preview(4).png" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://ca70jhabredeu" path="res://woman-holding-diamond-isolated-on-white-F8T97M.png" id="5_glbon"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qe12f")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1665855096]
 layout_mode = 1
@@ -47,13 +49,13 @@ theme_override_font_sizes/font_size = 100
 text = "Fredrik Borrmans Äventyr 
 under Jord, Skorpan"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1784946976]
+[node name="ButtonPlay" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1784946976]
 layout_mode = 2
 theme = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 128
 text = "Play"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1864935232]
+[node name="ButtonQuit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1864935232]
 layout_mode = 2
 theme = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 128
@@ -100,3 +102,6 @@ stretch_mode = 4
 position = Vector2(1203.0001, 1553.0001)
 scale = Vector2(0.236301, 0.23630099)
 texture = ExtResource("6_nlkkf")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
