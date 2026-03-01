@@ -26,14 +26,12 @@ func open_shop(_drill: Player, collected_ore: int):
 	drill.position = $DrillPoint.position
 	drill.scale = Vector2(0.4, 0.4)
 	drill.rotation = 0
-	allowed_to_buy = true
 
 func update_ore():
 	$con/VBoxContainer/HBoxContainer/LabelOre.text = "Ore: %s" % available_ore 
 
 func _pressed_venture_button():
 	$AudioStreamPlayer.stream_paused = true
-	allowed_to_buy = false
 	venture_down.emit(drill, available_ore)
 
 func _upgrade_bought(upgrade: Upgrade):
@@ -42,7 +40,7 @@ func _upgrade_bought(upgrade: Upgrade):
 	if not allowed_to_buy or available_ore < cost:
 		return
 	available_ore -= cost
-	upgrade.cost += 1
+	upgrade.cost += ceil(upgrade.cost / 5.0)
 	update_ore()
 	match upgrade.type:
 		"FUEL":
