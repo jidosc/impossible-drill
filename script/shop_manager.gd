@@ -40,7 +40,7 @@ func _upgrade_bought(upgrade: Upgrade):
 	if not allowed_to_buy or available_ore < cost:
 		return
 	available_ore -= cost
-	upgrade.cost += ceil(upgrade.cost / 5.0)
+	upgrade.cost += ceil(upgrade.cost / 7.5)
 	update_ore()
 	match upgrade.type:
 		"FUEL":

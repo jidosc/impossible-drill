@@ -82,8 +82,6 @@ func _physics_process(delta: float) -> void:
 		shake_timer = randf_range(0.05, 0.15)
 		$DrillSprite.position = Vector2(randf_range(-2, 2), randf_range(-2, 2))
 
-
-
 	move_and_slide()
 	_update_trail()
 

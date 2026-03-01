@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cqd24iegyamvi" path="res://image-removebg-preview(4).png" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://ca70jhabredeu" path="res://woman-holding-diamond-isolated-on-white-F8T97M.png" id="5_glbon"]
 [ext_resource type="Texture2D" uid="uid://p5igscc7guff" path="res://assets/cage.png" id="6_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://bd4ig24xv20gb" path="res://assets/jagkaninteväntapåattbörjaborra.mp3" id="8_8qtwp"]
 
 [node name="MainMenu" type="Control" unique_id=1866019234]
 layout_mode = 3
@@ -102,6 +103,10 @@ stretch_mode = 4
 position = Vector2(1203.0001, 1553.0001)
 scale = Vector2(0.236301, 0.23630099)
 texture = ExtResource("6_nlkkf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1904375531]
+stream = ExtResource("8_8qtwp")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
