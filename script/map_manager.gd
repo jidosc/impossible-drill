@@ -53,7 +53,7 @@ func spawn_drill(drill: Player, available_ore: int):
 	collected_ore = available_ore
 	drill.position = $StartPoint.position
 	drill.refuel()
-	drill.trail_enabled = true
+	drill.toggle_trail()
 	
 	var music: AudioStreamPlayer = $MusicDrilling
 	music.pitch_scale = 0.8 + min(drill.speed / 2000.0, 1.0) * 1.0
