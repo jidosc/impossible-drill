@@ -79,11 +79,7 @@ func _physics_process(delta: float) -> void:
 		shake_timer = randf_range(0.05, 0.15)
 		$DrillSprite.position = Vector2(randf_range(-2, 2), randf_range(-2, 2))
 
-	if Input.is_action_just_pressed("ui_focus_next"):
-		trail_enabled = !trail_enabled
-		if trail_enabled:
-			# Start a brand new trail segment
-			_create_trail()
+
 
 	move_and_slide()
 	_update_trail()
@@ -117,6 +113,13 @@ func end_travel() -> void:
 	$DrillSprite.position = Vector2.ZERO
 	if manager != null:
 		manager.reset_drill(self)
+		
+func toggle_trail():
+	trail_enabled = !trail_enabled
+	if trail_enabled:
+		# Start a brand new trail segment
+		_create_trail()
+
 
 func refuel():
 	current_fuel = max_fuel
