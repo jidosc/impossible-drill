@@ -137,19 +137,19 @@ type = "SPEED"
 [node name="Turn" parent="con/VBoxContainer/Shop/Upgrades" unique_id=1208042636 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Sharper turns?"
-cost = 1
+cost = 3
 type = "SPEED"
 
 [node name="Fuel" parent="con/VBoxContainer/Shop/Upgrades" unique_id=1092184979 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "More fuel capacity?"
-cost = 4
+cost = 3
 type = "FUEL"
 
 [node name="Shake" parent="con/VBoxContainer/Shop/Upgrades" unique_id=706237353 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Less shake?"
-cost = 3
+cost = 6
 type = "SHAKE"
 
 [node name="BorrmanMode" parent="con/VBoxContainer/Shop/Upgrades" unique_id=21962973 instance=ExtResource("3_8d0om")]
@@ -160,7 +160,7 @@ type = "BORRMAN"
 [node name="Wife" parent="con/VBoxContainer/Shop/Upgrades" unique_id=740094168 instance=ExtResource("3_8d0om")]
 layout_mode = 2
 description = "Fröken Borrman?"
-cost = 2
+cost = 4000
 type = "WIFE"
 
 [node name="ColorRect" type="ColorRect" parent="con/VBoxContainer" unique_id=1279676170]
@@ -187,7 +187,7 @@ theme_override_font_sizes/font_size = 24
 text = "CEO Borrman of Borrman Industries:
 Good job mining all that ore, Pal! Buy some 
 upgrades for yourself, and then keep mining.
-NeverStopTheGrind"
+Hashtag NeverStopTheGrind"
 
 [node name="ButtonVenture" type="Button" parent="con/VBoxContainer" unique_id=1483343131]
 layout_mode = 2

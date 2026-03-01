@@ -30,6 +30,7 @@ var rotation_locked := false
 func _ready() -> void:
 	_create_trail()
 	initial_rotation = rotation
+	start_sounds()
 
 func _create_trail() -> void:
 	trail = Line2D.new()
@@ -93,9 +94,8 @@ func _physics_process(delta: float) -> void:
 		ui.update_fuel(current_fuel, max_fuel)
 
 func drill_ore():
-	if not $AudioDrill.playing:
-		$AudioDrill.stream = drill_sounds[randi_range(0, len(drill_sounds)-1)] 
-		$AudioDrill.play()
+	$AudioDrill.stream = drill_sounds[randi_range(0, len(drill_sounds)-1)] 
+	$AudioDrill.play()
 
 func _update_trail() -> void:
 	if trail == null or not trail_enabled:
@@ -126,6 +126,14 @@ func toggle_trail():
 	if trail_enabled:
 		# Start a brand new trail segment
 		_create_trail()
+
+func start_sounds():
+	$AudioDrill2.pitch_scale = 0.4 + speed / 2000
+	print($AudioDrill2.pitch_scale)
+	$AudioDrill2.play()
+	
+func stop_sounds():
+	$AudioDrill2.stop()
 
 
 func refuel():

@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://6vb2r1u5ll5f" path="res://assets/drill2.mp3" id="3_tlaww"]
 [ext_resource type="AudioStream" uid="uid://c2unyepy8ixlk" path="res://assets/drill3.mp3" id="4_iyhxq"]
 [ext_resource type="Script" uid="uid://dd15xhifdgyxq" path="res://scenes/ScreenShake.gd" id="4_x1213"]
+[ext_resource type="AudioStream" uid="uid://ixipk80u8b70" path="res://assets/Borr.mp3" id="8_tlaww"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_1gavp"]
 points = PackedVector2Array(0, 76, 119, -33, -115, -33)
@@ -43,8 +44,15 @@ limit_top = 0
 limit_right = 480
 script = ExtResource("4_x1213")
 
+[node name="AudioDrill2" type="AudioStreamPlayer" parent="." unique_id=50959184]
+stream = ExtResource("8_tlaww")
+volume_db = -7.5
+autoplay = true
+
 [node name="AudioDrill" type="AudioStreamPlayer" parent="." unique_id=480510027]
-volume_db = -15.0
+volume_db = -10.0
+pitch_scale = 0.5
+max_polyphony = 5
 
 [connection signal="timeout" from="SpinTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="changeDirTimer" to="." method="_on_change_dir_timer_timeout"]

@@ -12,12 +12,14 @@ func _ready() -> void:
 	shop_manager.toggle_borrman.connect(toggle_borrman)
 
 func returned_to_surface(drill: Player, collected_ore: int):
+	drill.stop_sounds()
 	await blackout()
 	$UI.visible = false
 	$MapManager.visible = false
 	shop_manager.open_shop(drill, collected_ore)
 	drill.reparent(shop_manager)
 	await whiteout()
+	shop_manager.allowed_to_buy = true
 
 func blackout():
 	var black: Tween = get_tree().create_tween()
@@ -30,6 +32,7 @@ func whiteout():
 	await white.finished
 
 func return_to_ground(drill: Player, available_ore: int):
+	shop_manager.allowed_to_buy = false
 	await blackout()
 	$ShopManager/CameraShop.enabled = false
 	$ShopManager.visible = false
@@ -39,6 +42,7 @@ func return_to_ground(drill: Player, available_ore: int):
 	drill.reparent(map_manager)
 	map_manager.spawn_drill(drill, available_ore)
 	await whiteout()
+	drill.start_sounds()
 	
 func toggle_borrman():
 	ui = $UI
